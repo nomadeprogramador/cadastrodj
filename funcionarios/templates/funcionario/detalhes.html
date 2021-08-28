@@ -1,0 +1,47 @@
+{% extends 'base/model.html' %}
+
+{% block content %}
+
+<div class="col-md-8 mx-auto mt-4">
+    <h2 class="fs-2 mt-5"> Informações do funcionario {{funcionario.nome}} </h2>
+
+    <table class="table mt-4 ">
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Cargo</th>
+                <th>Sexo</th>
+                <th>Telefone</th>
+                <th>Email </th>
+                <th>Data Nascimento</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th>
+                    {{funcionario.nome}}
+                </th>
+                <th>{{funcionario.cargo}}</th>
+                <th>
+                    {{funcionario.sexo}}
+                </th>
+                <th>{{funcionario.telefone}}</th>
+                <th>
+                    {{funcionario.email}}
+                </th>
+                <th>{{funcionario.data_nascimento}}</th>
+                <th>
+                    <a class="btn btn-outline-danger" href="{% url 'funcionario:excluir_funcionario' funcionario.id %}"> Excluir </a>
+                </th>
+                <th><a class="btn btn-outline-warning" href="{% url 'funcionario:editar_funcionario' funcionario.id %}">Editar </a>
+                </th>
+            </tr>
+        </tbody>
+
+
+    </table>
+
+
+
+</div>
+{% endblock %}

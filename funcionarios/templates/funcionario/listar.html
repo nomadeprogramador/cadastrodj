@@ -1,0 +1,47 @@
+{% extends 'base/model.html' %}
+
+
+{% block content %}
+
+    <div class="col-md-8 mx-auto mt-4">
+        <h2 class="fs-2 mt-5"> Lista de Funcionario </h2>
+
+        <table class="table mt-4 ">
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>Cargo</th>
+                    <th>Sexo</th>
+                    <th>Telefone</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for funcionario in funcionarios %}
+                <tr>
+                    <th>
+                        {{funcionario.nome}}
+                    </th>
+                    <th>{{funcionario.cargo}}</th>
+                    <th>
+                        {{funcionario.sexo}}
+                    </th>
+                    <th>{{funcionario.telefone}}</th>
+                    <th>
+                        <a href="{% url 'funcionario:detalhes_funcionario' funcionario.id %}" class="btn btn-outline-success"> Ver Detalhes  </a>
+                    </th>
+                </tr>
+            </tbody>
+
+            {% endfor %}
+
+        </table>
+
+
+
+    </div>
+
+
+
+
+
+{% endblock %}

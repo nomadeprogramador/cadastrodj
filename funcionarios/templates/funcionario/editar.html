@@ -1,0 +1,32 @@
+{% extends 'base/model.html' %}
+{% load bootstrap %}
+
+{% block content %}
+
+<div class="container ">
+
+    <div class="col-md-7 mt-3">
+        <h3 class="fs-3 mt-4">  EDITAR  FUNCIONARIO </h3>
+
+        <div>
+                <form action="" method="post">
+                    {% csrf_token %}
+                    
+                    {{funcionario|bootstrap}}
+                    
+
+                    <button type="submit" class="btn btn-outline-warning mt-2"  > EDITAR </button>
+                </form>
+
+        </div>
+
+
+    </div>
+
+
+
+</div>
+
+
+
+{% endblock %}
